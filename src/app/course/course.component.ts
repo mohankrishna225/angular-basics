@@ -55,6 +55,9 @@ export class CourseComponent implements OnInit {
   //ngSwitch
   mychoice = "five";
 
+  //ngFor
+  subjects = ['Angular','React','Vue','Bootstrap'];
+
   constructor() { }
 
   ngOnInit(): void {
