@@ -1,0 +1,79 @@
+<p>course Component works!</p>
+
+<h3> {{name}}</h3>  <!--Interpolation-->
+<h3> {{name.length}}</h3>
+<h3> {{myUrl}} </h3>
+
+<input [id]="courseid" type="text" value="property binding">
+<br> <br>
+<!--This boolean values doesnot work correctly with interpolations-->
+<input disabled=false id="{{ courseid1 }}" type="text" value="mohan"> <!-- Property Binding--> 
+
+<input [disabled]="isDisabled" id="{{ courseid1 }}" type="text" value="hari"> <!-- Property Binding-->
+<!--OR usign bind keyword-->
+<input bind-disabled="isDisabled" id="{{ courseid1 }}" type="text" value="krishna"> <!-- Property Binding-->
+
+<h2 [class]="myText">Class Binding</h2> <!--Class binding-->
+
+<h2 [class.TextStyle]="required"> Conditional Class Binding</h2> <!--Conditional Class Binding-->
+
+<h2 [ngClass]="myGroup"> ngClass Directive Class Binding</h2> <!--Group of multiple Classes Class Binding-->
+
+<!--Style Binding-->
+<h2 [style.color] = "'blue'"> inline style binding </h2> 
+
+<h2 [style.color] = "myColor"> style binding </h2>
+
+<h2 [style.color] = "required1 ? 'green':'teal'"> conditionally style binding </h2>
+
+<h2 [ngStyle] = "myStyles"> style binding </h2>
+
+<!--Event Binding-->
+<button (click)="onClick()" type="button">event binding </button>
+
+<h2> {{ greetings }}</h2>
+
+<!--Template Reference Variable-->
+<input #msg1 type="text"> 
+<button (click)="message(msg1.value)" type="button">template Reference variables</button>
+
+<br><br>
+<!--Two Way binding 
+ Need to import FormsModule in app.module.ts-->
+
+<input [(ngModel)]=data type="text">
+
+<button type="button">Click Two way binding</button>
+
+<br> 
+
+{{ data }}
+
+<!--ngIf Directive-->
+
+<h1 *ngIf="status ; else elseBlock">Hello</h1>
+
+<ng-template #elseBlock> 
+<h1>welcome Mr. {{name}}</h1>
+</ng-template>
+
+<!--ngSwitch Directive-->
+
+<div [ngSwitch]="mychoice">
+    <div class="mySwitchCase">
+        
+        <div *ngSwitchCase="'one'">First Block</div>
+        <div *ngSwitchCase="'two'">Second Block</div>
+        <div *ngSwitchCase="'three'">Third Block</div>
+        <div *ngSwitchDefault> Default Block</div>
+    </div> 
+</div>
+
+<!--ngFor Directive-->
+
+
+
+
+
+
+

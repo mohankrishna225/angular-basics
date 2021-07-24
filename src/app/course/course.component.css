@@ -1,0 +1,30 @@
+p {
+
+    text-align: center;
+    font-size: 60px;
+    font-style: italic;
+    color: blue;
+}
+
+h3 {
+
+    text-align: center;
+    color: blue;
+}
+
+.TextColor {
+    color:cornflowerblue;
+}
+
+.TextStyle {
+    font-style: italic;
+}
+
+.TextSize {
+    font-size: medium;
+}
+
+.mySwitchCase {
+    color: darkmagenta;
+    text-align: center;
+}
