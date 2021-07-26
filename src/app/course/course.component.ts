@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input, Output, EventEmitter } from '@angular/core';
+//import { EventEmitter } from 'stream';
 
 @Component({
   selector: 'app-course', // selector: '.app-course', // selector: '[app-course]',
@@ -57,6 +58,16 @@ export class CourseComponent implements OnInit {
 
   //ngFor
   subjects = ['Angular','React','Vue','Bootstrap'];
+
+  @Input('fromParent') public parent:any;
+
+  @Output() public childInfo = new EventEmitter();
+
+  fireEvent(){
+    this.childInfo.emit("Child Component Works");
+  }
+
+
 
   constructor() { }
 
