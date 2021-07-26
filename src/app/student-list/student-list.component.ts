@@ -22,7 +22,7 @@ export class StudentListComponent implements OnInit {
   constructor(private _stdService: StudentService) { }
 
   ngOnInit() {
-    this.students = this._stdService.getStudents();
+    this.students = this._stdService.getStudents().subscribe(data=>this.students=data);
   }
 
 }

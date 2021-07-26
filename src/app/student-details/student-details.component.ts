@@ -23,7 +23,7 @@ export class StudentDetailsComponent implements OnInit {
   constructor(private _stdService: StudentService) { } //Dependency Injection and Service usauge
 
   ngOnInit() {
-    this.students = this._stdService.getStudents();
+    this.students = this._stdService.getStudents().subscribe(data=>this.students=data);
   }
 
 }

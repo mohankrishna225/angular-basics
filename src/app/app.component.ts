@@ -8,6 +8,7 @@ import { Component,Input, Output, EventEmitter } from '@angular/core';
 export class AppComponent {
   title = 'youtube';
   today : Date = new Date();  
+  public msg="";
 
   
   public parentMsg = "This is from AppComponent Parent";

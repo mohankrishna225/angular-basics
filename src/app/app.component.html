@@ -2,7 +2,9 @@
   Learning Angular on {{ today }}
 </h2>
 
-<!--  <app-course (childInfo)="$event" [fromParent]="parentMsg"></app-course> -->
+<app-course (childInfo)="msg=$event" [fromParent]="parentMsg"></app-course>
+
+<h1> Hello from child {{msg}}</h1>
 
 <app-student-list></app-student-list>
 <app-student-details></app-student-details>
