@@ -12,6 +12,8 @@ import { StudentService } from '../student.service';
       <li> {{x.name}} -- {{x.age}} -- {{x.gender}} </li>
 
     </ul>
+
+    <h1> Error: {{errMsg}}  </h1>
     `,
   styles: [
   ]
@@ -19,11 +21,12 @@ import { StudentService } from '../student.service';
 export class StudentDetailsComponent implements OnInit {
 
   public students = [] as any; //problem of strings mismatched with any
+  errMsg="";
 
   constructor(private _stdService: StudentService) { } //Dependency Injection and Service usauge
 
   ngOnInit() {
-    this.students = this._stdService.getStudents().subscribe(data=>this.students=data);
+    this.students = this._stdService.getStudents().subscribe(data=>this.students=data,error=>this.errMsg=error);
   }
 
 }

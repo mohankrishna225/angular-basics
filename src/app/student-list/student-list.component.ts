@@ -8,6 +8,7 @@ import { StudentService } from '../student.service';
     </h1>
     <ul *ngFor="let x of students">
       <li> {{x.name}} </li>
+     <h1> Error: {{errMsg}}  </h1>
 
     </ul>
 
@@ -18,11 +19,12 @@ import { StudentService } from '../student.service';
 export class StudentListComponent implements OnInit {
 
   public students = [] as any;
+  errMsg = "";
 
   constructor(private _stdService: StudentService) { }
 
   ngOnInit() {
-    this.students = this._stdService.getStudents().subscribe(data=>this.students=data);
+    this.students = this._stdService.getStudents().subscribe(data=>this.students=data,error=>this.errMsg=error);
   }
 
 }
