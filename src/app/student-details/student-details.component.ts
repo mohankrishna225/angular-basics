@@ -13,9 +13,15 @@ import { StudentService } from '../student.service';
 
     </ul>
 
-    <h1> Error: {{errMsg}}  </h1>
+    <h1> {{errMsg}}  </h1>
     `,
-  styles: [
+  styles: [`
+  h1{
+    text-align: center;
+    font-size: 30px;
+    color: green;
+  }
+`
   ]
 })
 export class StudentDetailsComponent implements OnInit {

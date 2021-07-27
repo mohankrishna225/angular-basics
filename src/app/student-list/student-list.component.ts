@@ -8,12 +8,18 @@ import { StudentService } from '../student.service';
     </h1>
     <ul *ngFor="let x of students">
       <li> {{x.name}} </li>
-     <h1> Error: {{errMsg}}  </h1>
+     <h1>  {{errMsg}}  </h1>
 
     </ul>
 
   `,
-  styles: [
+  styles: [`
+    h1{
+      text-align: center;
+      font-size: 30px;
+      color: green;
+    }
+  `
   ]
 })
 export class StudentListComponent implements OnInit {
